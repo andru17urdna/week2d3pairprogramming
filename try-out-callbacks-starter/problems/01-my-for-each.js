@@ -43,7 +43,7 @@ let myForEach = function(arr, cb) { //accept an array and a call back
 
         cb(el);
     }
-    
+
 };
 
 let test = [];

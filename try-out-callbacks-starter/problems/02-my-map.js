@@ -15,14 +15,31 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 });
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
+//Understand
+////in: arrayIn, cb
+////out: newArray of elements modified by using the cb on each element of arrayIn
+//Plan
+////take in the arrayIn and the cb
+////create a new array variable
+////loop through the arrayIn
+////apply cb to the elements of arrayIn
+////.push into new array
+////return newArray
+//Do
+////
+//Improve
 
-let myMap = function() {
+////Here is our Function
+let myMap = function(arr, cb) {
+    let modArray = [];
 
+    for ( let i = 0 ; i < arr.length ; i++) {
+        let modification = cb(arr[i]);
+        modArray.push(modification);
+    }
+    return modArray;
 };
-
-
-
-
+////It's above this line
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
