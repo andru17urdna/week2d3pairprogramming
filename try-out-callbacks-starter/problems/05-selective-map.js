@@ -1,5 +1,6 @@
 /*******************************************************************************
 Write a function `selectiveMap` that accepts an array and two callbacks as arguments.
+
 The function should return a new array where elements are replaced with the results
 of calling the second callback on the element only if calling the first callback
 on the element results in true. If calling the first callback on an element results
@@ -7,8 +8,63 @@ in false, then the element should not be changed in the new array.
 
 Note that that you cannot use the Array `map` or `filter` methods to solve this
 problem.
+/*
+UNDERSTAND
+//in: array, cb1, cb2
+//out: newArray that has elements - unchanged if false, changed if true
+//iterate through array
+//call cb1 on each el of array
+//if true call cb2 to that el and then push it into newArray
+//if false, just push it into newArray without doing anything else
+//return newArray
+PLAN
+DO
+IMPROVE
+
+
 
 Examples:
+
+
+console.log(selectiveMap([8, 5, 10, 4], isEven, square));
+// [ 64, 5, 100, 16 ]
+
+console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isEven, flipSign));
+// [ 10, -4, 7, -6, 2, -9 ]
+
+console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isPositive, square));
+// [-10, 16, 49, 36, -2, -9]
+
+AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
+    (optional if you already asked a question for this problem.)
+- Explain how you are using both of the callbacks in the function.
+- What do you expect each callback function to be returning?
+- How many times are you calling each callback function?
+*/
+//*******************************************************************************/
+
+let selectiveMap = function(array, cb1, cb2) {
+    let newArray = [];
+
+    for (let i = 0 ; i < array.length ; i++) {
+        let element = array[i];
+        if (cb1(element) === true) {
+            newArray.push(cb2(element));
+
+        } else {
+            newArray.push(element);
+        }
+    }
+    return newArray;
+};
+
+//in: array, cb1, cb2
+//out: newArray that has elements - unchanged if true, changed if false
+//iterate through array
+//call cb1 on each el of array
+//if true call cb2 to that el and then push it into newArray
+//if false, just push it into newArray without doing anything else
+//return newArray
 
 function isEven(n) {
     return n % 2 === 0;
@@ -34,20 +90,6 @@ console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isEven, flipSign));
 
 console.log(selectiveMap([-10, 4, 7, 6, -2, -9], isPositive, square));
 // [-10, 16, 49, 36, -2, -9]
-
-AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
-    (optional if you already asked a question for this problem.)
-- Explain how you are using both of the callbacks in the function.
-- What do you expect each callback function to be returning?
-- How many times are you calling each callback function?
-*******************************************************************************/
-
-let selectiveMap = function() {
-
-};
-
-
-
 
 
 

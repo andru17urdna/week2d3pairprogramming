@@ -39,10 +39,15 @@ console.log(result3); // hi!!!!!
 
 
 let multiMap = function(value, n, cb) {
+let newValue = value
 
-
+  for (let i = 0 ; i < n ; i++) {
+    newValue = cb(newValue);
+  }
+  return newValue;
 };
-
+//parameters are not special; they're just variables. the value here is only 7 the first time. after that, we can reassign it no problem
+//
 
 let result1 = multiMap(7, 2, function(n) {
   return n * 10;
