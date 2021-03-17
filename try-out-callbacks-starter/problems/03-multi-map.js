@@ -39,11 +39,8 @@ console.log(result3); // hi!!!!!
 
 
 let multiMap = function(value, n, cb) {
- let split = value.split("");
 
-  let valueArray = split.map(function(split[0]){
-    return cb(value);
-  })
+
 };
 
 

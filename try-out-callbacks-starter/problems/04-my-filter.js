@@ -31,20 +31,18 @@ console.log(result2);      // ['choose', 'words', 'only']
 
 
 let myFilter = function(array, cb) {
+    let arrayOut = [];
 
+    for (let i = 0; i < array.length; i++){
+        let element = array[i];
+        if (cb(element) === true ) {
+            arrayOut.push(element);
+        }
+
+    }
+    
+    return arrayOut;
 };
-
-let result1 = myFilter([5, 7, 4, 3, 8], function (n) {
-    return n % 2 === 0;
-});
-console.log(result1);       // [ 4, 8 ]
-
-let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
-    return s.length > 3;
-});
-console.log(result2);      // ['choose', 'words', 'only']
-
-
 
 
 
