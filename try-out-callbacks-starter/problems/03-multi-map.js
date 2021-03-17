@@ -26,26 +26,41 @@ console.log(result3); // hi!!!!!
 //
 //Plan
 //STEP 1: define the parameters
-//  set an output value
+//1.2 Use .split on value
+//2: Using .map, take an array and apply n to it
+//3. return our array
+//4. .join the array into a string
+
 //  iterate through using a standard for loop with middle term i < n
 //  inside the for loop perform cb on the original value
 //Do
 //Improve
+// console.log(value, n, cb);
 
 
 let multiMap = function(value, n, cb) {
+ let split = value.split("");
 
-  for (let i = 0; i < n; i++) {   // modifying n times
-
-    return cb(value);             //modifying the value
-
-  }
-
+  let valueArray = split.map(function(split[0]){
+    return cb(value);
+  })
 };
+
+
 let result1 = multiMap(7, 2, function(n) {
   return n * 10;
 });
 console.log(result1); // 700
+
+let result2 = multiMap(7, 3, function(n) {
+  return n * 10;
+});
+console.log(result2); // 7000
+
+let result3 = multiMap("hi", 5, function(s) {
+return s + "!";
+});
+console.log(result3); // hi!!!!!
 
 
 
