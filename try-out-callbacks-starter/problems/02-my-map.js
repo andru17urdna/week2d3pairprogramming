@@ -39,7 +39,7 @@ let myMap = function(arr, cb) {
     }
     return modArray;
 };
-////It's above this line
+
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
