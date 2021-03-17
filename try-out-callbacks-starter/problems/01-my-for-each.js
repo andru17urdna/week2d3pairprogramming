@@ -20,11 +20,37 @@ myForEach(['laika', 'belka'], function (el) {
 });
 console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
+// understand
+// accept an array and a call back
+// iterate through the array
+    // normal for loop
+    // as we're going through the for loop do the call back
+// does not need to return a value
 
-let myForEach = function() {
 
+
+// plan
+// do
+    //for loop
+    //declare an element as arr[i]
+    //invoke the function on that element
+// improve
+
+
+let myForEach = function(arr, cb) { //accept an array and a call back
+    for (let i = 0; i < arr.length; i++) {
+        let el = arr[i];
+
+        cb(el);
+    }
+    
 };
 
+let test = [];
+myForEach(['laika', 'belka'], function (el) {
+    test.push(el.toUpperCase());
+});
+console.log(test); // ['LAIKA', 'BELKA']
 
 
 
